@@ -15,5 +15,5 @@ This code mainly contians of react.js , javascript , css and html5.
 - good design
 - too accurate and dynamic
 
-#Screen Shot
-![App_ScreenShot]()
+## Screen Shot
+![App_ScreenShot](https://github.com/AKHILSUNNI/weather_app_react/blob/main/outlook.jpeg)
