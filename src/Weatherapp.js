@@ -18,7 +18,6 @@ function Weather_app() {
   }
 
   const data = (eve) => {
-    if(eve.key === "Enter"){
       fetch(`http://api.weatherapi.com/v1/current.json?key=a5f43da630fd4dde84674851210709&q=${name}`)
       .then(response => response.json())
       .then(res => { 
@@ -29,7 +28,6 @@ function Weather_app() {
        setImg(res.current.condition.icon)
        setName("")
       })
-    }
   }
 
   const today = (d) =>{
@@ -49,6 +47,9 @@ function Weather_app() {
       : "cold"
     }>
       <main>
+      {(typeof place != "undefined")? 
+        (
+        <div>
           <div className ="searchbox">
             <input
              type="text"
@@ -56,13 +57,10 @@ function Weather_app() {
              value ={name}
              onChange ={change}
              className="searchbar"
-             onKeyPress ={data}
              ref={p}
              />
-        </div>
-        {(typeof place != "undefined")? 
-        (
-        <div>
+             <button className ="button" onClick ={data}>search</button>
+          </div>
           <div className ="location">
             <div className ="name">{place} , {country}</div>
             <div className ="current-info">{today(new Date())}</div>
