@@ -18,7 +18,7 @@ function Weather_app() {
   }
 
   const data = (eve) => {
-      fetch(`http://api.weatherapi.com/v1/current.json?key=a5f43da630fd4dde84674851210709&q=${name}`)
+      fetch(`https://api.weatherapi.com/v1/current.json?key=a5f43da630fd4dde84674851210709&q=${name}`)
       .then(response => response.json())
       .then(res => { 
        setPlace(res.location.name)
